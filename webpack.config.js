@@ -14,6 +14,9 @@ module.exports = {
         // 通过 options 参数传参
         use: [
           {
+            loader: './loaders/asyncLoader.js',
+          },
+          {
             loader: './loaders/replaceLoader.js',
             options: {
               name: 'hello',
