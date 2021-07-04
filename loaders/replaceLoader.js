@@ -1,3 +1,5 @@
+const { getOptions } = require('loader-utils');
 module.exports = function (source) {
-  return `${source.replace('hello', 'world')} `;
+  const params = getOptions(this);
+  return `${source.replace(params.name, 'world')} `;
 };

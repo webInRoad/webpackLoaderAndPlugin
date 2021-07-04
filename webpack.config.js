@@ -8,6 +8,21 @@ module.exports = {
     filename: 'main.js',
   },
   module: {
-    rules: [{ test: /\.js$/, use: './loaders/replaceLoader.js' }],
+    rules: [
+      {
+        test: /\.js$/,
+        // 通过 options 参数传参
+        use: [
+          {
+            loader: './loaders/replaceLoader.js',
+            options: {
+              name: 'hello',
+            },
+          },
+        ],
+        // 通过字符串来传参
+        // use: './loaders/replaceLoader.js?name=hello'
+      },
+    ],
   },
 };

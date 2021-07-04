@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build":"webpack "
+    "build": "webpack "
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/webInRoad/webpackLoaderAndPlugin#readme",
   "devDependencies": {
+    "loader-utils": "^2.0.0",
     "webpack": "^5.42.0",
     "webpack-cli": "^4.7.2"
   }
