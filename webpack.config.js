@@ -1,5 +1,6 @@
 const path = require('path');
-
+const DemoPlugin = require('./plugins/demoPlugin');
+const CopyRightWebpackPlugin = require('./plugins/copyright-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
@@ -14,12 +15,12 @@ module.exports = {
         test: /\.js$/,
         // 通过 options 参数传参
         use: [
-          {
-            loader: 'asyncLoader.js',
-          },
-          {
-            loader: 'emitLoader.js',
-          },
+          // {
+          //   loader: 'asyncLoader.js',
+          // },
+          // {
+          //   loader: 'emitLoader.js',
+          // },
           {
             loader: 'replaceLoader.js',
             options: {
@@ -32,4 +33,5 @@ module.exports = {
       },
     ],
   },
+  plugins: [new DemoPlugin({ name: 'zhangsan' }), new CopyRightWebpackPlugin()],
 };
