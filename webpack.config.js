@@ -7,6 +7,7 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: 'main.js',
   },
+  resolveLoader: { modules: ['./loaders/', 'node_modules'] },
   module: {
     rules: [
       {
@@ -14,10 +15,13 @@ module.exports = {
         // 通过 options 参数传参
         use: [
           {
-            loader: './loaders/asyncLoader.js',
+            loader: 'asyncLoader.js',
           },
           {
-            loader: './loaders/replaceLoader.js',
+            loader: 'emitLoader.js',
+          },
+          {
+            loader: 'replaceLoader.js',
             options: {
               name: 'hello',
             },

@@ -8,8 +8,9 @@ module.exports = function (source) {
     (error, content) => {
       if (error) {
         callback(error, '');
+      } else {
+        callback(null, content);
       }
-      callback(null, content);
     }
   );
 };
